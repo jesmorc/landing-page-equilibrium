@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>Equilibrium — Holistic Balance</title>
+	<meta name="description" content="Equilibrium — Holistic balance for body, mind, emotions, and spirit. Courses, talks, workshops, coaching, multidimensional accompaniment, non‑ordinary states, alternative economies, and permaculture consulting." />
+	<!-- Tailwind CDN (for quick single-file demo) -->
+	<script src="https://cdn.tailwindcss.com"></script>
+	<script>
+    tailwind.config = { theme: { extend: { colors: { gold: '#D4AF37' } } } };
+	</script>
+	<!-- Vue 3 (CDN) -->
+	<script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
+	<style>
+      html { scroll-behavior: smooth; }
+      .gold-text { color: #D4AF37; }
+      .gold-stroke { stroke: #D4AF37; }
+      .gold-fill { fill: #D4AF37; }
+	</style>
+</head>
+<body class="min-h-screen bg-black text-zinc-100 selection:bg-zinc-800">
+<div id="app">
+	<!-- Header / Nav -->
+	<header class="sticky top-0 z-50 backdrop-blur supports-[backdrop-filter]:bg-black/50 border-b border-zinc-900">
+		<div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+			<div class="flex h-16 items-center justify-between">
+				<!-- Logo + Brand -->
+				<div class="flex items-center gap-3">
+					<div class="h-9 w-9">
+						<!-- Triforce -->
+						<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-label="Triforce logo" role="img">
+							<polygon points="50,5 20,55 80,55" class="gold-fill" />
+							<polygon points="35,60 20,85 50,85" class="gold-fill" />
+							<polygon points="65,60 50,85 80,85" class="gold-fill" />
+						</svg>
+					</div>
+					<div class="flex flex-col leading-tight">
+						<span class="text-xl font-semibold tracking-wide gold-text">Equilibrium</span>
+						<span class="text-xs text-zinc-400">Holistic Balance & Integral Wellbeing</span>
+					</div>
+				</div>
+
+				<!-- Nav -->
+				<nav class="hidden md:flex items-center gap-6 text-sm">
+					<a v-for="item in navItems" :key="item.href" :href="item.href" @click.prevent="scrollTo(item.href)" class="text-zinc-300 hover:text-white transition-colors">{{ item.label }}</a>
+					<a href="#contact" @click.prevent="scrollTo('#contact')" class="rounded-xl px-4 py-2 border border-zinc-800 hover:border-zinc-700 hover:bg-zinc-900 gold-text">Book a Call</a>
+				</nav>
+			</div>
+		</div>
+	</header>
+
+	<!-- Hero -->
+	<section id="home" class="relative overflow-hidden">
+		<div class="absolute inset-0" aria-hidden>
+			<div class="pointer-events-none absolute -left-32 -top-32 h-64 w-64 rounded-full blur-3xl opacity-20" :style="{ background: gold }"></div>
+			<div class="pointer-events-none absolute -right-24 top-24 h-80 w-80 rounded-full blur-3xl opacity-10" :style="{ background: gold }"></div>
+		</div>
+		<div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20 sm:py-28">
+			<div class="grid lg:grid-cols-2 gap-10 items-center">
+				<div>
+					<div class="inline-flex items-center gap-2 rounded-full border border-zinc-800 bg-zinc-900/40 px-3 py-1 text-xs text-zinc-300">
+						<span class="h-1.5 w-1.5 rounded-full" :style="{ background: gold }"></span>
+						Crafted in black & gold
+					</div>
+					<h1 class="mt-6 text-4xl sm:text-5xl md:text-6xl font-semibold tracking-tight">
+						Find your <span class="gold-text">Equilibrium</span> — physical, mental, emotional, and spiritual.
+					</h1>
+					<p class="mt-6 text-lg text-zinc-300 max-w-prose">
+						We offer courses, talks, workshops, and experiential dynamics to cultivate holistic balance. Our team blends
+						science, embodiment, and ancestral wisdom to help you design a life aligned with your deepest values.
+					</p>
+					<div class="mt-8 flex flex-wrap items-center gap-3">
+						<a href="#programs" @click.prevent="scrollTo('#programs')" class="rounded-xl px-5 py-3 font-medium shadow-sm hover:shadow border border-zinc-800 hover:border-zinc-700 bg-zinc-900 gold-text">Explore Programs</a>
+						<a href="#contact" @click.prevent="scrollTo('#contact')" class="rounded-xl px-5 py-3 font-medium shadow-sm border border-zinc-800 hover:border-zinc-700 hover:bg-zinc-900 text-white">Free Discovery Call</a>
+					</div>
+				</div>
+
+				<div class="relative">
+					<div class="rounded-3xl border border-zinc-800 bg-gradient-to-b from-zinc-950 to-zinc-900 p-8 shadow-2xl">
+						<div class="mx-auto w-40 sm:w-52">
+							<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Triforce emblem" class="drop-shadow">
+								<defs>
+									<linearGradient id="golden" x1="0" x2="1">
+										<stop offset="0%" stop-color="#f7e7b9" />
+										<stop offset="50%" stop-color="#E6C76D" />
+										<stop offset="100%" stop-color="#B78F2A" />
+									</linearGradient>
+								</defs>
+								<polygon points="50,5 20,55 80,55" fill="url(#golden)" />
+								<polygon points="35,60 20,85 50,85" fill="url(#golden)" />
+								<polygon points="65,60 50,85 80,85" fill="url(#golden)" />
+							</svg>
+						</div>
+						<p class="mt-6 text-center text-zinc-300">
+							The triforce symbolizes harmony among body, mind, heart, and spirit — a compass toward an integrated life.
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Pillars -->
+	<section class="border-t border-zinc-900 bg-zinc-950">
+		<div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
+			<h2 class="text-2xl sm:text-3xl font-semibold">The Four Pillars of Holistic Balance</h2>
+			<p class="mt-3 text-zinc-300 max-w-3xl">
+				Equilibrium weaves together practices that strengthen your <span class="font-medium gold-text">physical</span> vitality,
+				sharpen your <span class="font-medium gold-text">mental</span> clarity, deepen your <span class="font-medium gold-text">emotional</span> intelligence, and
+				nourish your <span class="font-medium gold-text">spiritual</span> connection.
+			</p>
+
+			<div class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+				<div v-for="p in pillars" :key="p.title" class="rounded-2xl border border-zinc-800 bg-zinc-900/40 p-6">
+					<div class="flex items-center gap-3">
+						<span v-html="p.icon" aria-hidden="true"></span>
+						<h3 class="text-lg font-semibold gold-text">{{ p.title }}</h3>
+					</div>
+					<p class="mt-3 text-zinc-300">{{ p.desc }}</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Programs -->
+	<section id="programs" class="border-t border-zinc-900">
+		<div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
+			<div class="flex items-end justify-between flex-wrap gap-4">
+				<div>
+					<h2 class="text-2xl sm:text-3xl font-semibold">Courses, Talks, Workshops & Dynamics</h2>
+					<p class="mt-3 text-zinc-300 max-w-3xl">
+						Choose live or online formats. Every experience blends education with embodiment so you leave with tools you can use immediately.
+					</p>
+				</div>
+				<a href="#contact" @click.prevent="scrollTo('#contact')" class="rounded-xl px-4 py-2 border border-zinc-800 hover:border-zinc-700 hover:bg-zinc-900 gold-text">Request a Proposal</a>
+			</div>
+
+			<div class="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+				<article v-for="item in programs" :key="item.title" class="rounded-2xl border border-zinc-800 bg-zinc-900/40 p-6 flex flex-col">
+					<div class="flex items-center justify-between gap-2">
+						<h3 class="text-lg font-semibold">{{ item.title }}</h3>
+						<span class="text-xs rounded-full border border-zinc-700 px-2 py-0.5 gold-text">{{ item.tag }}</span>
+					</div>
+					<p class="mt-3 text-zinc-300 flex-1">{{ item.desc }}</p>
+					<div class="mt-5">
+						<a href="#contact" @click.prevent="scrollTo('#contact')" class="text-sm underline underline-offset-4 hover:no-underline gold-text">Get dates & pricing</a>
+					</div>
+				</article>
+			</div>
+		</div>
+	</section>
+
+	<!-- Coaching & Personal Training -->
+	<section id="coaching" class="border-t border-zinc-900 bg-zinc-950">
+		<div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
+			<div class="grid lg:grid-cols-2 gap-8 items-start">
+				<div class="rounded-3xl border border-zinc-800 p-8">
+					<h2 class="text-2xl sm:text-3xl font-semibold">Coaching & Personal Training</h2>
+					<p class="mt-3 text-zinc-300">
+						Bespoke programs that combine habit design, strength & mobility training, recovery protocols, and mindset work.
+						Available 1:1 and small groups, online or in person.
+					</p>
+					<ul class="mt-6 space-y-3 text-zinc-300">
+						<li class="flex gap-2" v-for="line in coachingBullets" :key="line"><span v-html="icons.check" aria-hidden="true"></span> {{ line }}</li>
+					</ul>
+					<div class="mt-6">
+						<a href="#contact" @click.prevent="scrollTo('#contact')" class="rounded-xl px-4 py-2 border border-zinc-800 hover:border-zinc-700 hover:bg-zinc-900 gold-text">Apply for Coaching</a>
+					</div>
+				</div>
+
+				<div class="rounded-3xl border border-zinc-800 p-8">
+					<h2 class="text-2xl sm:text-3xl font-semibold">Multidimensional Accompaniment</h2>
+					<p class="mt-3 text-zinc-300">
+						Compassionate guidance across life transitions, purpose clarification, and integration of profound experiences —
+						always client‑led, trauma‑sensitive, and rooted in informed consent.
+					</p>
+					<ul class="mt-6 space-y-3 text-zinc-300">
+						<li class="flex gap-2" v-for="line in accompanyBullets" :key="line"><span v-html="icons.check"></span> {{ line }}</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Conscious States -->
+	<section id="conscious" class="border-t border-zinc-900">
+		<div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
+			<div class="grid lg:grid-cols-3 gap-8">
+				<div class="lg:col-span-2">
+					<h2 class="text-2xl sm:text-3xl font-semibold">Initiation to Non‑Ordinary States of Consciousness</h2>
+					<p class="mt-3 text-zinc-300">
+						Learn to navigate expanded states safely and legally through breathwork, meditation intensives, sound journeys,
+						and other non‑pharmacological methods. Our approach emphasizes preparation, intention, and integration.
+					</p>
+					<div class="mt-6 grid sm:grid-cols-2 gap-4">
+						<div v-for="t in consciousTiles" :key="t" class="rounded-xl border border-zinc-800 bg-zinc-900/40 p-4 text-zinc-300 flex items-center gap-2">
+							<span v-html="icons.check"></span> {{ t }}
+						</div>
+					</div>
+					<p class="mt-6 text-xs text-zinc-400">
+						Disclaimer: We do not provide medical care or controlled substances. Content is educational only and not a substitute for professional advice.
+					</p>
+				</div>
+				<aside class="rounded-3xl border border-zinc-800 p-6 bg-zinc-900/40">
+					<h3 class="text-lg font-semibold gold-text">Formats</h3>
+					<ul class="mt-3 space-y-2 text-zinc-300">
+						<li v-for="f in formats" :key="f" class="flex gap-2"><span v-html="icons.dot"></span> {{ f }}</li>
+					</ul>
+				</aside>
+			</div>
+		</div>
+	</section>
+
+	<!-- Alternative Economies -->
+	<section id="economies" class="border-t border-zinc-900 bg-zinc-950">
+		<div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
+			<h2 class="text-2xl sm:text-3xl font-semibold">Advisory on Alternative Economies</h2>
+			<p class="mt-3 text-zinc-300 max-w-3xl">
+				Build resilient livelihoods with tools like mutual credit, timebanking, cooperatives, and local exchange systems.
+				We help communities and projects design incentive‑compatible, values‑aligned economic ecosystems.
+			</p>
+			<div class="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+				<div v-for="card in economies" :key="card.title" class="rounded-2xl border border-zinc-800 bg-zinc-900/40 p-6">
+					<div class="flex items-center gap-3">
+						<span v-html="card.icon"></span>
+						<h3 class="text-lg font-semibold gold-text">{{ card.title }}</h3>
+					</div>
+					<p class="mt-3 text-zinc-300">{{ card.desc }}</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Permaculture -->
+	<section id="permaculture" class="border-t border-zinc-900">
+		<div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
+			<div class="grid lg:grid-cols-2 gap-8 items-start">
+				<div>
+					<h2 class="text-2xl sm:text-3xl font-semibold">Permaculture Consulting</h2>
+					<p class="mt-3 text-zinc-300">
+						From balconies to bioregions, we apply whole‑systems design to water, soil, food, and community. Start with a site
+						assessment and leave with a phased plan you can implement.
+					</p>
+					<ul class="mt-6 grid sm:grid-cols-2 gap-3 text-zinc-300">
+						<li v-for="line in permacultureBullets" :key="line" class="flex gap-2"><span v-html="icons.leaf"></span> {{ line }}</li>
+					</ul>
+					<div class="mt-6">
+						<a href="#contact" @click.prevent="scrollTo('#contact')" class="rounded-xl px-4 py-2 border border-zinc-800 hover:border-zinc-700 hover:bg-zinc-900 gold-text">Start a Project</a>
+					</div>
+				</div>
+				<div class="rounded-3xl border border-zinc-800 bg-zinc-900/40 p-6">
+					<h3 class="text-lg font-semibold gold-text">Sample Engagements</h3>
+					<div class="mt-4 space-y-3 text-zinc-300">
+						<p>• Urban courtyard retrofit: shade, food planters, greywater reuse.</p>
+						<p>• Rural homestead: water‑first design, rotational grazing, energy.</p>
+						<p>• Community gardens: governance charters and harvest festivals.</p>
+					</div>
+					<p class="mt-4 text-xs text-zinc-400">We coordinate with local experts and respect local regulations.</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- About -->
+	<section id="about" class="border-t border-zinc-900 bg-zinc-950">
+		<div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
+			<h2 class="text-2xl sm:text-3xl font-semibold">About Equilibrium</h2>
+			<p class="mt-3 text-zinc-300 max-w-3xl">
+				We are a collective of coaches, facilitators, and designers with backgrounds in movement science, psychology,
+				systems thinking, and regenerative design. Our work is secular and inclusive. We honor evidence and experience.
+			</p>
+			<div class="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+				<div v-for="s in stats" :key="s.label" class="rounded-2xl border border-zinc-800 bg-zinc-900/40 p-6 text-center">
+					<div class="text-3xl font-semibold gold-text">{{ s.stat }}</div>
+					<div class="mt-1 text-sm text-zinc-400">{{ s.label }}</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Testimonials -->
+	<section class="border-t border-zinc-900">
+		<div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
+			<h2 class="text-2xl sm:text-3xl font-semibold">What participants say</h2>
+			<div class="mt-8 grid gap-6 md:grid-cols-3">
+				<figure v-for="t in testimonials" :key="t.name" class="rounded-2xl border border-zinc-800 bg-zinc-900/40 p-6">
+					<blockquote class="text-zinc-300">“{{ t.quote }}”</blockquote>
+					<figcaption class="mt-4 text-sm text-zinc-400">— {{ t.name }}</figcaption>
+				</figure>
+			</div>
+		</div>
+	</section>
+
+	<!-- FAQs -->
+	<section class="border-t border-zinc-900 bg-zinc-950">
+		<div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
+			<h2 class="text-2xl sm:text-3xl font-semibold">FAQ</h2>
+			<div class="mt-6 grid gap-6 md:grid-cols-2">
+				<div v-for="f in faqs" :key="f.q" class="rounded-2xl border border-zinc-800 bg-zinc-900/40 p-6">
+					<h3 class="font-semibold gold-text">{{ f.q }}</h3>
+					<p class="mt-2 text-zinc-300">{{ f.a }}</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Contact (JetForm) -->
+	<section id="contact" class="border-t border-zinc-900">
+		<div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
+			<div class="grid lg:grid-cols-3 gap-8">
+				<div class="lg:col-span-2">
+					<h2 class="text-2xl sm:text-3xl font-semibold">Contact & Bookings</h2>
+					<p class="mt-3 text-zinc-300 max-w-prose">Tell us about your goals and context. Use the JetForm below and we’ll reply within 2 business days.</p>
+
+					<div class="mt-6 rounded-3xl border border-zinc-800 bg-zinc-900/40 p-2">
+						<div class="aspect-[4/3] w-full overflow-hidden rounded-2xl bg-black">
+							<!-- Replace with your JetForm public link -->
+							<iframe title="Equilibrium — Contact (JetForm)" src="https://form.jotform.com/jsform/252295424391358" class="h-full w-full" loading="lazy" referrerpolicy="no-referrer" sandbox="allow-forms allow-scripts allow-same-origin allow-popups"></iframe>  
+						</div>
+						<div class="mt-3 flex items-center justify-between gap-3">
+							<p class="text-xs text-zinc-400">Having trouble with the embed? Use the direct link.</p>
+							<a href="https://jetform.example/forms/your-form-id" target="_blank" rel="noopener noreferrer" class="text-sm underline underline-offset-4 hover:no-underline gold-text">Open in a new tab</a>
+						</div>
+					</div>
+					<div class="mt-4 text-xs text-zinc-500">By submitting, you agree to our processing of your information for the purpose of responding to your inquiry.</div>
+				</div>
+				<aside class="rounded-3xl border border-zinc-800 bg-zinc-900/40 p-6">
+					<h3 class="text-lg font-semibold gold-text">Booking info</h3>
+					<ul class="mt-3 space-y-2 text-zinc-300">
+						<li class="flex gap-2" v-for="b in bookingInfo" :key="b"><span v-html="icons.dot"></span> {{ b }}</li>
+					</ul>
+					<p class="mt-4 text-xs text-zinc-400">This site offers educational content only; it is not medical or legal advice.</p>
+				</aside>
+			</div>
+		</div>
+	</section>
+
+	<!-- Footer -->
+	<footer class="border-t border-zinc-900 bg-zinc-950">
+		<div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-10 flex flex-col md:flex-row items-center justify-between gap-4">
+			<div class="flex items-center gap-3">
+				<div class="h-6 w-6">
+					<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden>
+						<polygon points="50,5 20,55 80,55" class="gold-fill" />
+						<polygon points="35,60 20,85 50,85" class="gold-fill" />
+						<polygon points="65,60 50,85 80,85" class="gold-fill" />
+					</svg>
+				</div>
+				<span class="text-sm text-zinc-400">© <span>{{ year }}</span> Equilibrium. All rights reserved.</span>
+			</div>
+			<div class="text-xs text-zinc-500">Triforce emblem used as a geometric symbol for educational mockup.</div>
+		</div>
+	</footer>
+</div>
+
+<script>
+  const { createApp } = Vue;
+  createApp({
+    data() {
+      return {
+        gold: '#D4AF37',
+        year: new Date().getFullYear(),
+        navItems: [
+          { href: '#home', label: 'Home' },
+          { href: '#programs', label: 'Programs' },
+          { href: '#coaching', label: 'Coaching' },
+          { href: '#conscious', label: 'Conscious States' },
+          { href: '#economies', label: 'Alternative Economies' },
+          { href: '#permaculture', label: 'Permaculture' },
+          { href: '#about', label: 'About' },
+          { href: '#contact', label: 'Contact' },
+        ],
+        icons: {
+          check: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden><path d="M20 6L9 17l-5-5"/></svg>',
+          dot: '<svg width="18" height="18" viewBox="0 0 24 24" fill="#D4AF37" aria-hidden><circle cx="12" cy="12" r="4" /></svg>',
+          coin: '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden><ellipse cx="12" cy="5" rx="7" ry="3"/><path d="M5 5v6c0 1.7 3.1 3 7 3s7-1.3 7-3V5"/><path d="M5 11v6c0 1.7 3.1 3 7 3s7-1.3 7-3v-6"/></svg>',
+          clock: '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>',
+          people: '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden><circle cx="8" cy="8" r="3"/><circle cx="16" cy="8" r="3"/><path d="M3 21v-2a5 5 0 015-5h0"/><path d="M21 21v-2a5 5 0 00-5-5h0"/></svg>',
+          compass: '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden><circle cx="12" cy="12" r="9"/><path d="M16 8l-4 8-4-4 8-4z"/></svg>',
+          leaf: '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden><path d="M3 21s6-1 10-5 5-10 5-10-6 1-10 5-5 10-5 10z"/><path d="M14 7l-7 7"/></svg>',
+        },
+        pillars: [
+          { title: 'Physical', desc: 'Strength, mobility, breath, and recovery for a resilient body.', icon: '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden><path d="M6 12h12"/><path d="M9 7v10"/><path d="M15 7v10"/></svg>' },
+          { title: 'Mental', desc: 'Attention training, focus rituals, and practical mindset tools.', icon: '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden><circle cx="12" cy="12" r="9"/><path d="M9 10h6v4H9z"/></svg>' },
+          { title: 'Emotional', desc: 'Relational skills, somatic awareness, and regulation practices.', icon: '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden><path d="M20.8 7.6a5 5 0 00-7.1 0L12 9.3l-1.7-1.7a5 5 0 10-7.1 7.1L12 23l8.8-8.3a5 5 0 000-7.1z"/></svg>' },
+          { title: 'Spiritual', desc: 'Purpose alignment, contemplative inquiry, and awe literacy.', icon: '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden><path d="M12 2v20"/><path d="M4 12h16"/></svg>' },
+        ],
+        programs: [
+          { title: 'Holistic Balance 101', desc: 'A 6‑week foundations course covering the four pillars with weekly practice labs.', tag: 'Course' },
+          { title: 'Breath, Focus & Flow', desc: 'A practical dive into respiration mechanics, attention, and flow triggers.', tag: 'Workshop' },
+          { title: 'Emotional Alchemy', desc: 'Transform reactivity into response through somatic tools and relational skills.', tag: 'Workshop' },
+          { title: 'States of Consciousness', desc: 'A talk on ordinary vs. non‑ordinary states and safe, legal ways to explore them.', tag: 'Talk' },
+          { title: 'Money, Meaning & Mutualism', desc: 'Intro to alternative economies: mutual credit, timebanking, local exchange.', tag: 'Talk' },
+          { title: 'Permaculture for Life Design', desc: 'A hands‑on day rethinking habitats, food systems, and resilient living.', tag: 'Immersive' },
+        ],
+        coachingBullets: [
+          'Strength & mobility cycles tailored to your context',
+          'Breathwork and nervous‑system regulation',
+          'Focus rituals and cognitive off‑loading',
+          'Recovery: sleep, light, circadian alignment',
+        ],
+        accompanyBullets: [
+          'Values clarification & life design',
+          'Somatic tracking & emotional processing',
+          'Integration after retreats or peak experiences',
+          'Ethical, non‑directive support',
+        ],
+        consciousTiles: [
+          'Preparation & intention setting',
+          'Somatic anchoring and resourcing',
+          'Integration circles & journaling',
+          'Safety, consent, and aftercare',
+        ],
+        formats: [
+          '2‑hour intro sessions',
+          'Weekend immersions',
+          'Integration circles',
+          'Private groups & organizations',
+        ],
+        economies: [
+          { title: 'Mutual Credit', desc: 'Design and governance for reputation‑based exchange networks.', icon: null },
+          { title: 'Timebanking', desc: 'Reciprocity frameworks for service exchange.', icon: null },
+          { title: 'Co‑ops', desc: 'Legal pathways, bylaws, and participatory decision‑making.', icon: null },
+          { title: 'Local Currencies', desc: 'Circulation design and community adoption strategies.', icon: null },
+        ],
+        permacultureBullets: [
+          'Water harvesting & earthworks',
+          'Soil building & composting',
+          'Food forests & guilds',
+          'Social permaculture & governance',
+        ],
+        testimonials: [
+          { quote: 'Practical, grounded, and surprisingly fun. I left with rituals I actually use.', name: 'Alex G.' },
+          { quote: 'The integration circle helped me make sense of a profound retreat.', name: 'María L.' },
+          { quote: 'Our community now runs a small mutual credit network—game changer.', name: 'Samir R.' },
+        ],
+        faqs: [
+          { q: 'Is this religious?', a: 'No. Our work is secular and inclusive. We welcome diverse beliefs and backgrounds.' },
+          { q: 'Do you offer corporate programs?', a: 'Yes. We tailor talks and workshops for organizations seeking resilient, values‑aligned cultures.' },
+          { q: 'Are non‑ordinary state practices safe?', a: 'We only use non‑pharmacological, legal methods and emphasize preparation, consent, and integration.' },
+          { q: 'Where are you based?', a: 'We operate worldwide online and travel for on‑site engagements by request.' },
+        ],
+        stats: [
+          { stat: '10+', label: 'years facilitating' },
+          { stat: '200+', label: 'workshops delivered' },
+          { stat: '1k+', label: 'people served' },
+          { stat: '24', label: 'cities & online' },
+        ],
+        bookingInfo: [
+          'Sliding‑scale and scholarships available',
+          'Online & in‑person options',
+          'English & Spanish facilitation',
+        ],
+      };
+    },
+    created() {
+      // attach icons to economies now that icons are defined
+      this.economies = this.economies.map((e, i) => ({
+        ...e,
+        icon: [this.icons.coin, this.icons.clock, this.icons.people, this.icons.compass][i]
+      }));
+    },
+    methods: {
+      scrollTo(id) {
+        const el = document.querySelector(id);
+        if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      },
+    },
+  }).mount('#app');
+</script>
+</body>
+</html>
