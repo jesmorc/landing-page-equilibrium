@@ -29,7 +29,7 @@
 				<div class="flex items-center gap-3">
 					<div class="h-9 w-9">
 						<!-- Triforce -->
-						<svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path fill="#000000" d="M256 59.72L142.687 256h226.625L256 59.72zM369.313 256L256 452.28h226.625L369.312 256zM256 452.28L142.687 256 29.376 452.28H256z"></path></g></svg>
+						<svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" fill="#ffd700"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path fill="#d4af37" d="M256 59.72L142.687 256h226.625L256 59.72zM369.313 256L256 452.28h226.625L369.312 256zM256 452.28L142.687 256 29.376 452.28H256z"></path></g></svg>
 						<!-- 
 						<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-label="Triforce logo" role="img">
 							<polygon points="50,5 20,55 80,55" class="gold-fill" />
@@ -47,7 +47,7 @@
 				<!-- Nav -->
 				<nav class="hidden md:flex items-center gap-6 text-sm">
 					<a v-for="item in navItems" :key="item.href" :href="item.href" @click.prevent="scrollTo(item.href)" class="text-zinc-300 hover:text-white transition-colors">{{ item.label }}</a>
-					<a href="#contact" @click.prevent="scrollTo('#contact')" class="rounded-xl px-4 py-2 border border-zinc-800 hover:border-zinc-700 hover:bg-zinc-900 gold-text">Book a Call</a>
+					<!--<a href="#contact" @click.prevent="scrollTo('#contact')" class="rounded-xl px-4 py-2 border border-zinc-800 hover:border-zinc-700 hover:bg-zinc-900 gold-text">Book a Call</a>-->
 				</nav>
 			</div>
 		</div>
@@ -62,10 +62,7 @@
 		<div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20 sm:py-28">
 			<div class="grid lg:grid-cols-2 gap-10 items-center">
 				<div>
-					<div class="inline-flex items-center gap-2 rounded-full border border-zinc-800 bg-zinc-900/40 px-3 py-1 text-xs text-zinc-300">
-						<span class="h-1.5 w-1.5 rounded-full" :style="{ background: gold }"></span>
-						Crafted in black & gold
-					</div>
+					
 					<h1 class="mt-6 text-4xl sm:text-5xl md:text-6xl font-semibold tracking-tight">
 						Find your <span class="gold-text">Equilibrium</span> — physical, mental, emotional, and spiritual.
 					</h1>
@@ -73,15 +70,14 @@
 						We offer courses, talks, workshops, and experiential dynamics to cultivate holistic balance. Our team blends
 						science, embodiment, and ancestral wisdom to help you design a life aligned with your deepest values.
 					</p>
-					<div class="mt-8 flex flex-wrap items-center gap-3">
-						<a href="#programs" @click.prevent="scrollTo('#programs')" class="rounded-xl px-5 py-3 font-medium shadow-sm hover:shadow border border-zinc-800 hover:border-zinc-700 bg-zinc-900 gold-text">Explore Programs</a>
-						<a href="#contact" @click.prevent="scrollTo('#contact')" class="rounded-xl px-5 py-3 font-medium shadow-sm border border-zinc-800 hover:border-zinc-700 hover:bg-zinc-900 text-white">Free Discovery Call</a>
-					</div>
+					
 				</div>
 
 				<div class="relative">
 					<div class="rounded-3xl border border-zinc-800 bg-gradient-to-b from-zinc-950 to-zinc-900 p-8 shadow-2xl">
 						<div class="mx-auto w-40 sm:w-52">
+							<svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" fill="#ffd700"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path fill="#d4af37" d="M256 59.72L142.687 256h226.625L256 59.72zM369.313 256L256 452.28h226.625L369.312 256zM256 452.28L142.687 256 29.376 452.28H256z"></path></g></svg>
+						  <!--
 							<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Triforce emblem" class="drop-shadow">
 								<defs>
 									<linearGradient id="golden" x1="0" x2="1">
@@ -94,6 +90,8 @@
 								<polygon points="35,60 20,85 50,85" fill="url(#golden)" />
 								<polygon points="65,60 50,85 80,85" fill="url(#golden)" />
 							</svg>
+						  -->
+							
 						</div>
 						<p class="mt-6 text-center text-zinc-300">
 							The triforce symbolizes harmony among body, mind, heart, and spirit — a compass toward an integrated life.
@@ -162,7 +160,7 @@
 					<h2 class="text-2xl sm:text-3xl font-semibold">Coaching & Personal Training</h2>
 					<p class="mt-3 text-zinc-300">
 						Bespoke programs that combine habit design, strength & mobility training, recovery protocols, and mindset work.
-						Available 1:1 and small groups, online or in person.
+						Available 1:1 and small groups.
 					</p>
 					<ul class="mt-6 space-y-3 text-zinc-300">
 						<li class="flex gap-2" v-for="line in coachingBullets" :key="line"><span v-html="icons.check" aria-hidden="true"></span> {{ line }}</li>
@@ -265,7 +263,7 @@
 		</div>
 	</section>
 
-	<!-- About -->
+	<!-- About 
 	<section id="about" class="border-t border-zinc-900 bg-zinc-950">
 		<div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
 			<h2 class="text-2xl sm:text-3xl font-semibold">About Equilibrium</h2>
@@ -281,8 +279,9 @@
 			</div>
 		</div>
 	</section>
-
-	<!-- Testimonials -->
+  -->
+  
+	<!-- Testimonials
 	<section class="border-t border-zinc-900">
 		<div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
 			<h2 class="text-2xl sm:text-3xl font-semibold">What participants say</h2>
@@ -294,7 +293,7 @@
 			</div>
 		</div>
 	</section>
-
+  -->
 	<!-- FAQs -->
 	<section class="border-t border-zinc-900 bg-zinc-950">
 		<div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
@@ -314,10 +313,10 @@
 			<div class="grid lg:grid-cols-3 gap-8">
 				<div class="lg:col-span-2">
 					<h2 class="text-2xl sm:text-3xl font-semibold">Contact & Bookings</h2>
-					<p class="mt-3 text-zinc-300 max-w-prose">Tell us about your goals and context. Use the JetForm below and we’ll reply within 2 business days.</p>
+					<p class="mt-3 text-zinc-300 max-w-prose">Tell us about your goals and context. Use the form below and we’ll reply ASAP.</p>
 
 					<div class="mt-6 rounded-3xl border border-zinc-800 bg-zinc-900/40 p-2">
-						<div class="aspect-[4/3] w-full overflow-hidden rounded-2xl bg-black">
+						<div class="aspect-[16/9] w-full rounded-2xl bg-black">
 							<!-- Replace with your JetForm public link -->
 							
 						    <iframe
@@ -329,27 +328,27 @@
 						      src="https://form.jotform.com/252295424391358"
 						      frameborder="0"
 						      style="min-width:100%;max-width:100%;height:539px;border:none;"
-						      scrolling="no"
+						      scrolling="yes"
 						    >
 						    </iframe>
 						    <script src='https://cdn.jotfor.ms/s/umd/latest/for-form-embed-handler.js'></script>
 						    <script>window.jotformEmbedHandler("iframe[id='JotFormIFrame-252295424391358']", "https://form.jotform.com/")</script>
 						    
 						</div>
-						<div class="mt-3 flex items-center justify-between gap-3">
+						<!--<div class="mt-3 flex items-center justify-between gap-3">
 							<p class="text-xs text-zinc-400">Having trouble with the embed? Use the direct link.</p>
 							<a href="https://jetform.example/forms/your-form-id" target="_blank" rel="noopener noreferrer" class="text-sm underline underline-offset-4 hover:no-underline gold-text">Open in a new tab</a>
-						</div>
+						</div>-->
 					</div>
 					<div class="mt-4 text-xs text-zinc-500">By submitting, you agree to our processing of your information for the purpose of responding to your inquiry.</div>
 				</div>
-				<aside class="rounded-3xl border border-zinc-800 bg-zinc-900/40 p-6">
+				<!--<aside class="rounded-3xl border border-zinc-800 bg-zinc-900/40 p-6">
 					<h3 class="text-lg font-semibold gold-text">Booking info</h3>
 					<ul class="mt-3 space-y-2 text-zinc-300">
 						<li class="flex gap-2" v-for="b in bookingInfo" :key="b"><span v-html="icons.dot"></span> {{ b }}</li>
 					</ul>
 					<p class="mt-4 text-xs text-zinc-400">This site offers educational content only; it is not medical or legal advice.</p>
-				</aside>
+				</aside-->
 			</div>
 		</div>
 	</section>
@@ -359,11 +358,7 @@
 		<div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-10 flex flex-col md:flex-row items-center justify-between gap-4">
 			<div class="flex items-center gap-3">
 				<div class="h-6 w-6">
-					<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden>
-						<polygon points="50,5 20,55 80,55" class="gold-fill" />
-						<polygon points="35,60 20,85 50,85" class="gold-fill" />
-						<polygon points="65,60 50,85 80,85" class="gold-fill" />
-					</svg>
+					<svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" fill="#ffd700"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path fill="#d4af37" d="M256 59.72L142.687 256h226.625L256 59.72zM369.313 256L256 452.28h226.625L369.312 256zM256 452.28L142.687 256 29.376 452.28H256z"></path></g></svg>
 				</div>
 				<span class="text-sm text-zinc-400">© <span>{{ year }}</span> Equilibrium. All rights reserved.</span>
 			</div>
@@ -386,7 +381,6 @@
           { href: '#conscious', label: 'Conscious States' },
           { href: '#economies', label: 'Alternative Economies' },
           { href: '#permaculture', label: 'Permaculture' },
-          { href: '#about', label: 'About' },
           { href: '#contact', label: 'Contact' },
         ],
         icons: {
